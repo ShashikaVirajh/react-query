@@ -3,7 +3,7 @@ import { TCocktail } from "../store/models/cocktail.model";
 
 export const normalizeFetchRandomCocktailsResponse = (
   data: any
-): any => {
+): TCocktail[] => {
   const cocktailList: TCocktail[] = data?.map((cocktail: any) => {
     const { drinks } = cocktail?.data;
 

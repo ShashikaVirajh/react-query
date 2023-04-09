@@ -1,11 +1,8 @@
 import { RematchDispatch, RematchRootState, init } from '@rematch/core';
-import loadingPlugin, { ExtraModelsFromLoading } from '@rematch/loading';
 import persistPlugin from "@rematch/persist";
 import storage from 'redux-persist/lib/storage';
 
 import { RootModel, models } from './models/root.model';
-
-type FullModel = ExtraModelsFromLoading<RootModel, { type: 'full' }>;
 
 const persistConfig = {
   key: "root",
@@ -13,13 +10,13 @@ const persistConfig = {
   whitelist: ['cocktailStore']
 };
 
-export const store = init<RootModel, FullModel>({
+export const store = init<RootModel>({
     models,
-    plugins: [loadingPlugin({ type: 'full' }), persistPlugin(persistConfig)],
+    plugins: [persistPlugin(persistConfig)],
   });
 
 export type Store = typeof store;
 export type Dispatch = RematchDispatch<RootModel>;
-export type RootState = RematchRootState<RootModel, FullModel>;
+export type RootState = RematchRootState<RootModel>;
 
 

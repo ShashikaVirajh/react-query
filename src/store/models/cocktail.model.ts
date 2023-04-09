@@ -1,5 +1,4 @@
 import { createModel } from "@rematch/core";
-import { CocktailService } from "../../services/cocktail.service";
 import { RootModel } from "./root.model";
 
 export type TCocktail = {
@@ -38,10 +37,6 @@ export const cocktailStore = createModel<RootModel>()({
     },
   },
   effects: (dispatch)  => ({
-    async fetchCocktailList() {
-      const response = await CocktailService.FetchRandomCocktails();
-      dispatch.cocktailStore.setFetchedCocktailList(response);
-    },
     addToFavourites(payload: TCocktail) {
       dispatch.cocktailStore.handleAddToFavourites(payload);
     },
