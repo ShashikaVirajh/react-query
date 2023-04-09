@@ -9,7 +9,7 @@
 ## Installation Guide
 
 ```bash
-git clone https://github.com/ShashikaVirajh/react-rematch-example.git
+git clone https://github.com/ShashikaVirajh/react-query-example.git
 cd react-query-example
 yarn
 ```
