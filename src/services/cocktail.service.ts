@@ -6,7 +6,6 @@ import { TCocktail } from '../store/models/cocktail.model';
 
 export class CocktailService {
   static fetchCocktailList = async (): Promise<TCocktail[]> => {
-    console.log('calling the api')
     const proms = [];
 
     for (let i = 1; i <= COCKTAIL_LIST_LENGTH; i++) {
